@@ -1,7 +1,5 @@
 FROM nginx:latest AS base
 WORKDIR /
-EXPOSE 80
-EXPOSE 443
 
 FROM alpine:latest AS build
 WORKDIR /
