@@ -1,0 +1,22 @@
+version: 1
+site:
+  meta:
+    title: joelcrosby.dev
+    subtitle: A Dev's note about things
+    author: Joel Crosby
+    base: /
+  nav:
+    items:
+      - label: joelcrosby.dev
+        target: /
+      - label: Github
+        target: https://github.com/joelcrosby
+      - label: Netptune
+        target: https://netptune.co.uk
+  footer:
+    items:
+      - label: Home
+        target: /
+theme: default
+build:
+  overwrite: true

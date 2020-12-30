@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{.Page.Title}}</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+        <link rel="manifest" href="/static/site.webmanifest">
+
+        <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/generated/styles.css" />
+
+        <script src="/generated/main.js" defer></script>
+    </head>
+    <body>
+
+        <nav>
+            <ul>
+                {{range $item := .Nav.Items}}
+                    <a href="{{$item.Target}}"><li>{{$item.Label}}</li></a>
+                {{end}}
+            </ul>
+        </nav>
+
+        <article>
+            <h1>{{.Page.Title}}</h1>
+            <p>{{.Page.Description}}</p>
+
+            <small>
+                Posted on {{.Page.Date.Format "Jan 2 2006"}}.
+                Photo: {{.Page.Credit}}
+            </small>
+
+            <img src="{{.Page.Img}}" width="400" />
+
+            <p>{{.Page.Content}}</p>
+        </article>
+
+    </body>
+</html>

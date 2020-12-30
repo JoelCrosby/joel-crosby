@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{.Meta.Title}}</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+        <link rel="manifest" href="/static/site.webmanifest">
+
+        <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/generated/styles.css" />
+
+        <script src="/generated/main.js" defer></script>
+    </head>
+    <body>
+
+        <nav>
+            <ul>
+                {{range $item := .Nav.Items}}
+                    <a href="{{$item.Target}}"><li>{{$item.Label}}</li></a>
+                {{end}}
+            </ul>
+        </nav>
+
+        <main>
+            <div class="hero">
+                <h1>{{.Meta.Title}}</h1>
+                <p>{{.Meta.Subtitle}}</p>
+            </div>
+
+            
+
+            {{range $page := .Pages}}
+                <div class="a-item">
+                    <a href="{{$page.Href}}">
+                        <img src="{{$page.Img}}" alt="{{$page.Title}}" width="512">
+                    </a>
+                    <a href="{{$page.Href}}" class="a-title">
+                        <h3>{{$page.Title}}</h3>
+                    </a>
+                    <p><small>Posted on {{$page.Date.Format "Jan 2 2006"}}</small></p>
+                    <p>{{$page.Description}}</p>
+                    <p><a href="{{$page.Href}}">read post</a></p>
+                </div>
+            {{end}}
+        </main>
+
+    </body>
+</html>
