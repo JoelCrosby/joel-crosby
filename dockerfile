@@ -1,5 +1,6 @@
-FROM nginx:alpine AS base
+FROM caddy:2.1.1-alpine AS base
 WORKDIR /
+EXPOSE 80
 
 FROM alpine:latest AS build
 WORKDIR /
@@ -24,4 +25,5 @@ WORKDIR /src
 RUN /verless build
 
 FROM base AS final
-COPY --from=build /src/target /usr/share/nginx/html
+COPY --from=build /src/target /www
+ENTRYPOINT ["caddy", "file-server", "--root", "/www"]
