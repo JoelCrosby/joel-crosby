@@ -6,7 +6,7 @@ Tags:
     - linux
     - dev
     - programming
-Img: /static/arch.jpg
+Img: static/arch.jpg
 Credit: Emily Campbell
 ---
 

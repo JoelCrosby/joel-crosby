@@ -1,4 +1,4 @@
-FROM nginx:latest AS base
+FROM nginx:alpine AS base
 WORKDIR /
 
 FROM alpine:latest AS build
