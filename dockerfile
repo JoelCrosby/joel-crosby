@@ -26,4 +26,5 @@ RUN /verless build
 
 FROM base AS final
 COPY --from=build /src/target /www
-ENTRYPOINT ["caddy", "file-server", "--root", "/www"]
+COPY Caddyfile /
+ENTRYPOINT ["caddy", "run"]
