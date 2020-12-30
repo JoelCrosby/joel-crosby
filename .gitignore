@@ -26,5 +26,5 @@ modules/.vscode
 npm-debug.log
 yarn-error.log
 
-
+target/
 generated/

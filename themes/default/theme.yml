@@ -5,4 +5,4 @@ build:
   before:
     # - Your command here - just comment out the line
     # - Another command there
-    - yarn build 
+    - yarn build

@@ -31,6 +31,7 @@
       "**/dist": true,
       "**/.DS_Store": true,
       "**/*generated": true,
+      "**/target": true,
     },
     "files.watcherExclude": {
       "**/.git/objects/**": true,
@@ -43,4 +44,3 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "files.insertFinalNewline": true,
   }
-  
