@@ -1,0 +1,1 @@
+verless serve -w
