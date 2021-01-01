@@ -1,9 +1,0 @@
-localhost {
-	root * /www
-	file_server
-}
-
-joelcrosby.dev {
-	root * /www
-	file_server
-}

@@ -7,8 +7,6 @@ site:
     base: /
   nav:
     items:
-      - label: joelcrosby.dev
-        target: /
       - label: Github
         target: https://github.com/joelcrosby
       - label: Netptune

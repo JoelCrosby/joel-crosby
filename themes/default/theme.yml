@@ -1,4 +1,7 @@
 version: 1
+types:
+   nav:
+      template: nav.html
 build:
   # Here you can specify commands you need to run in order to build
   # your theme, like generating CSS.

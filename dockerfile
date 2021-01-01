@@ -1,6 +1,6 @@
-FROM caddy:2.1.1-alpine AS base
+FROM nginx:alpine AS base
 WORKDIR /
-EXPOSE 80
+EXPOSE 8080
 
 FROM alpine:latest AS build
 WORKDIR /
@@ -25,6 +25,8 @@ WORKDIR /src
 RUN /verless build
 
 FROM base AS final
-COPY --from=build /src/target /www
-COPY Caddyfile /
-ENTRYPOINT ["caddy", "run"]
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /src/target /usr/share/nginx/html
+
+# set read permissions to html dir for nginx group
+RUN chmod -R 777 /usr/share/nginx/html
