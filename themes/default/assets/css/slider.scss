@@ -14,6 +14,13 @@
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .theme-switch-wrapper {
+    display: none;
+  }
+}
+
+
 .theme-switch {
   display: inline-block;
   height: 24px;
