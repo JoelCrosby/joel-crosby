@@ -22,6 +22,6 @@ After logging in I was greeted with what I'd eventually learn is Ubuntu's spin o
 
 While the gnome desktop in Ubuntu looks good out of the box. There comes a time when you want to customize it a bit. Unfortunately the gnome desktop environment isn't very customizable by default, however we can get around this by installing the gnome tweaks program.
 
-Gnome tweaks allows you to change the GTK theme, the default fonts, icons, shell theme and much more.
+Gnome tweaks allows you to change the GTK theme, the default fonts, icons, shell theme and much more. It also allows you to manage gnome extensions.
 
 
