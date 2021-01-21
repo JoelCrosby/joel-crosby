@@ -7,10 +7,8 @@ site:
     base: /
   nav:
     items:
-      - label: Github
-        target: https://github.com/joelcrosby
-      - label: Netptune
-        target: https://netptune.co.uk
+      - label: Home
+        target: /
   footer:
     items:
       - label: Home

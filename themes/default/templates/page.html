@@ -11,7 +11,8 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
         <link rel="manifest" href="/static/site.webmanifest">
 
-        <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Overpass:wght@300;400&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="/generated/styles.css" />
 
@@ -20,29 +21,39 @@
     <body>
 
         <nav>
-            <div class="logo">
-                <a href="/">
-                    <img src="/static/android-chrome-192x192.png" alt="jocelcrosby.dev logo" width="32">
-                    <li>joelcrosby.dev</li>
-                </a>
-            </div>
-
-            <ul>
-                {{range $item := .Nav.Items}}
-                    <a href="{{$item.Target}}" target="_blank" rel="noreferrer noopener">
-                        <li>{{$item.Label}}</li>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/static/android-chrome-192x192.png" alt="jocelcrosby.dev logo" width="32">
+                        <li>joelcrosby.dev</li>
                     </a>
-                {{end}}
-            </ul>
+                </div>
 
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round"></div>
-                </label>
-                <label class="theme-switch-label" for="checkbox">
-                    Dark Mode
-                </em>
+                <ul>
+                    {{range $item := .Nav.Items}}
+                        <a href="{{$item.Target}}">
+                            <li>{{$item.Label}}</li>
+                        </a>
+                    {{end}}
+
+                    <a href="https://github.com/joelcrosby" target=" _blank" rel="noreferrer noopener">
+                        <li>Github</li>
+                    </a>
+
+                    <a href="https://netptune.co.uk" target="_blank" rel="noreferrer noopener">
+                        <li>Netptune</li>
+                    </a>
+                </ul>
+
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                    <label class="theme-switch-label" for="checkbox">
+                        Dark Mode
+                    </em>
+                </div>
             </div>
         </nav>
 
