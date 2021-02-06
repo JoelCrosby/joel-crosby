@@ -1,0 +1,27 @@
+.DS_STORE
+
+/dist/
+*.log
+node_modules
+_gen
+
+# Include when developing application packages.
+pubspec.lock
+.c9
+.idea/
+.devcontainer/*
+!.devcontainer/README.md
+!.devcontainer/recommended-devcontainer.json
+!.devcontainer/recommended-Dockerfile
+.settings/
+*.swo
+.vimrc
+.nvimrc
+
+# Ignore npm/yarn debug log
+npm-debug.log
+yarn-error.log
+
+target/
+generated/
+public/

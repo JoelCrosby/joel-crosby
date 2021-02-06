@@ -1,0 +1,35 @@
+<head>
+
+    <title>{{ .Title }}</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Overpass:wght@300;400&display=swap" rel="stylesheet">
+    
+    <meta property="og:title" content="{{ .Title }}">
+    <meta name="title" content="{{ .Title }}">
+    <meta property="twitter:title" content="{{ .Title }}">
+    
+    <meta name="description" content="{{ .Description }}">
+    <meta property="og:description" content="{{ .Description }}">
+    <meta property="twitter:description" content="{{ .Description }}">
+    
+    <meta name="image" content="{{ .Params.Image }}">
+    <meta property="og:image" content="{{ .Params.Image }}">
+    <meta property="twitter:image" content="{{ .Params.Image }}">
+
+    {{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed" "enableSourceMap" true ) }}
+    {{ $style := resources.Get "css/style.scss" | resources.ToCSS $options  }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    
+    {{ $scripts := resources.Get "scripts/main.js" | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $scripts.RelPermalink }}" defer></script>
+    
+</head>

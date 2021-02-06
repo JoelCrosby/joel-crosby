@@ -1,0 +1,27 @@
+{{ define "main" }}
+
+<main>
+    <div class="hero">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Site.Params.Subtitle }}</p>
+    </div>
+
+    {{range .Site.RegularPages.ByPublishDate.Reverse}}
+        <div class="a-item">
+            <div>
+                <a href="{{ .RelPermalink }}">
+                    <img src="{{ .Params.image }}" alt="{{ .Params.alt}}" width="512">
+                </a>
+            </div>
+            <div>
+                <a href="{{ .RelPermalink }}" class="a-title">
+                    <h3>{{ .Title }}</h3>
+                </a>
+                <p><small>Posted on {{ .Date.Format "Jan 2 2006"}}</small></p>
+                <p>{{ .Description }}</p>
+                <p><a href="{{ .RelPermalink }}">read post</a></p>
+            </div>
+        </div>
+    {{end}}
+</main>
+{{ end }}

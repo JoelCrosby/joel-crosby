@@ -1,0 +1,36 @@
+<nav>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="/">
+                <img src="/android-chrome-192x192.png" alt="jocelcrosby.dev logo" width="32">
+                <li>joelcrosby.dev</li>
+            </a>
+        </div>
+
+        <ul>
+            {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}">
+                    <li>{{ .Name }}</li>
+                </a>
+            {{ end }}
+
+            <a href="https://github.com/joelcrosby" target=" _blank" rel="noreferrer noopener">
+                <li>Github</li>
+            </a>
+
+            <a href="https://netptune.co.uk" target="_blank" rel="noreferrer noopener">
+                <li>Netptune</li>
+            </a>
+        </ul>
+
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+            </label>
+            <label class="theme-switch-label" for="checkbox">
+                Dark Mode
+            </em>
+        </div>
+    </div>
+</nav>

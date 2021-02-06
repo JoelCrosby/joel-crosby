@@ -1,0 +1,54 @@
+name: Build Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  buildx:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -   
+        name: Setup SSH Keys and known_hosts
+        env:
+            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+            mkdir -p ~/.ssh
+            ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+            ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+            ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+            echo "${{ secrets.SSH_PRIVATE_KEY }}" >> /home/runner/.ssh/id_rsa
+            sudo chmod 600 /home/runner/.ssh/id_rsa
+      -
+        name: Test ssh
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agnet.sock
+        run: |
+           [ ! -f /home/runner/.ssh/id_rsa ] && echo "key does not exist ..." 
+           ssh -v ${{ secrets.DOKKU_HOST }} exit
+      -
+        name: Build
+        env:
+          DOKKU_HOST: ${{ secrets.DOKKU_HOST }}
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          BUILD_NUMBER=$(date '+%Y%m%d')
+          docker build \
+          --build-arg "COMMIT=${GITHUB_SHA}" \
+          --build-arg "GITHUB_REF=${GITHUB_REF}" \
+          --build-arg "BUILD_NUMBER=${BUILD_NUMBER}.${GITHUB_RUN_NUMBER}" \
+          --build-arg "RUN_ID=${GITHUB_RUN_ID}" \
+          -t dokku/joelcrosby.dev:$GITHUB_SHA .
+          docker save dokku/joelcrosby.dev:$GITHUB_SHA | bzip2 | ssh $DOKKU_HOST "bunzip2 | docker load"
+      -
+        name: Deploy
+        env:
+          DOKKU_HOST: ${{ secrets.DOKKU_HOST }}
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          ssh $DOKKU_HOST "dokku tags:deploy joelcrosby.dev $GITHUB_SHA"

@@ -1,0 +1,22 @@
+FROM nginx:alpine AS base
+WORKDIR /
+EXPOSE 8080
+
+FROM alpine:latest AS build
+WORKDIR /
+COPY . /src
+
+# install dependancies
+RUN apk add --no-cache \
+        hugo
+
+# verless statis site build
+WORKDIR /src
+RUN hugo
+
+FROM base AS final
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /src/public /usr/share/nginx/html
+
+# set read permissions to html dir for nginx group
+RUN chmod -R 777 /usr/share/nginx/html

@@ -1,0 +1,14 @@
+baseURL = "https://joelcrosby.dev"
+languageCode = "en-us"
+title = "joelcrosby.dev"
+theme = "default"
+
+[params]
+  Subtitle = "A Dev's note about things"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = -110
