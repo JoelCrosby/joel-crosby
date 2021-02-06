@@ -3,6 +3,7 @@
 /dist/
 *.log
 node_modules
+_gen
 
 # Include when developing application packages.
 pubspec.lock
@@ -28,3 +29,4 @@ yarn-error.log
 
 target/
 generated/
+public/
