@@ -14,7 +14,7 @@ RUN apk add --no-cache \
         yarn
 
 CMD /bin/ash
-RUN wget https://github.com/verless/verless/releases/download/v0.5.3/verless-linux-amd64.tar && \
+RUN wget https://github.com/verless/verless/releases/download/v0.5.4/verless-linux-amd64.tar && \
     tar -xvf verless-linux-amd64.tar
 
 WORKDIR /src/themes/default

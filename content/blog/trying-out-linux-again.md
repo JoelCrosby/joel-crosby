@@ -1,6 +1,6 @@
 ---
 Title: Trying out linux again
-Description: So it turns out linux is really good
+Description: The best kind of simple
 Date: 2020-10-24
 Tags:
     - linux
@@ -10,7 +10,7 @@ Img: /static/arch.jpg
 Credit: Emily Campbell
 ---
 
-As is tradition when switching to linux, I decided to start with Ubuntu. More specifically 20.04, the latest realise at the time. The installation is very simple, the simple next, next, next affair. A few clicks later and you're ready to reboot.
+As is tradition when switching to linux, I decided to start with Ubuntu. More specifically 20.04, the latest release at the time. The installation is very simple, the simple next, next, next affair. A few clicks later and you're ready to reboot.
 
 The initial experience is pleasant. while booting up the Ubuntu logo is nicely displayed below the motherboard vender logo. This may seem pretty minor but these little touches really add up.
 
@@ -20,6 +20,8 @@ After logging in I was greeted with what I'd eventually learn is Ubuntu's spin o
 
 ![alt text](/static/images/ubuntu-20.04-desktop-screenshot.jpg "Ubuntu-20.04 Desktop Screenshot")
 
-While the gnome desktop in Ubuntu looks good out of the box. There comes a time when you want to customize it a bit. Unfortunately the gnome desktop environment isn't very customizable by default, however we can get around this by installing the popular gnome tweaks.
+While the gnome desktop in Ubuntu looks good out of the box. There comes a time when you want to customise it a bit. Unfortunately the gnome desktop environment isn't very customisable by default, however we can get around this by installing the popular gnome tweaks tool.
 
-Gnome tweaks allows you not only customize the look n feel of gnome but also allows you to manage gnome extension which can add new functionality to the desktop environment.
+Gnome tweaks allows you to not only customise the look 'n' feel of gnome but also manage gnome extensions which can add new functionality to the desktop environment. Do you want gnome to look like osx? Sure. Want a more traditional windows style taskbar? Sure. The customisation is linux is unparralled and It dosn't just stop at tweaking gnome. 
+
+The thing about linux is that it's free, and we're not talking about the cost of admission. That, while obvious at first can take a while to fully understand & appreciate. When you install linux on your machine you are free to do what ever the hell you want with it. If you don't like a certain thing about your OS you can get rid of it or swap it out. Not because it was desgined to be customisable or exstensible in practice but because you are not bound by propiety code that is hidden away or by strict licensing that prevents you from altering its behaviour. Everything is open.
