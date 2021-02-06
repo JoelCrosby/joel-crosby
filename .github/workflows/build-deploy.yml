@@ -14,7 +14,7 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
       -   
-        name: Setup SSH Keys and known_hosts
+        name: Setup SSH
         env:
             SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
@@ -25,7 +25,7 @@ jobs:
             echo "${{ secrets.SSH_PRIVATE_KEY }}" >> /home/runner/.ssh/id_rsa
             sudo chmod 600 /home/runner/.ssh/id_rsa
       -
-        name: Test ssh
+        name: Test SSH
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agnet.sock
         run: |
