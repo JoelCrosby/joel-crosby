@@ -10,13 +10,14 @@ COPY . /src
 RUN apk add --no-cache \
         hugo
 
-# verless statis site build
+# build hugo static site
 WORKDIR /src
 RUN hugo
 
+# copy nginx config & static assets
 FROM base AS final
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /src/public /usr/share/nginx/html
 
-# set read permissions to html dir for nginx group
+# set read permissions to html nginx dir
 RUN chmod -R 777 /usr/share/nginx/html
