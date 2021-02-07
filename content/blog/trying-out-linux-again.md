@@ -7,7 +7,7 @@ tags:
     - dev
     - programming
 image:
-    src: /arch.jpg
+    src: /images/arch.jpg
     alt: Arch Linux
 credit: Emily Campbell
 ---

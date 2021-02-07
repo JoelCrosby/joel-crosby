@@ -19,6 +19,15 @@
                 </a>
                 <p><small>Posted on {{ .Date.Format "Jan 2 2006"}}</small></p>
                 <p>{{ .Description }}</p>
+                {{ with .Params.tags }}
+                <ul class="tags">
+                    {{ range . }}
+                    <li>
+                        <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+                    </li>
+                    {{ end }}
+                  </ul>
+                {{ end }}
                 <p><a href="{{ .RelPermalink }}">read post</a></p>
             </div>
         </div>

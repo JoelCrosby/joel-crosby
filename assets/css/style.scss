@@ -223,6 +223,27 @@ nav {
   }
 }
 
+.tags {
+  padding: 0;
+  margin: 1rem 0;
+  list-style-type: none;
+  display: flex;
+
+  li {
+    display: block;
+    margin-right: .4rem;
+    background-color: #8844BB;
+    padding: .2rem .6rem;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 2.121rem;
@@ -243,8 +264,8 @@ nav {
   .a-item {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin: 3.6rem 0;
 
     & > div:first-child {

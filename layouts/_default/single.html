@@ -2,11 +2,21 @@
 {{ partial "metadata.html" . }}
 <article class="article-post">
 
-    <img src="{{ .Params.Image.Src }}" width="400" />
+    <img src="{{ .Params.Image.Src }}" alt="{{ .Params.Image.Alt }}" width="400" />
 
     <small>
         Posted on {{ .Date.Format "Jan 2 2006"}}.
     </small>
+
+    {{ with .Params.tags }}
+    <ul class="tags">
+        {{ range . }}
+        <li>
+            <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    {{ end }}
 
     <h1>{{ .Title }}</h1>
     <blockquote>{{ .Description }}</blockquote>
