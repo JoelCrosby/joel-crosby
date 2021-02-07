@@ -194,7 +194,7 @@ nav {
     padding-left: 1rem;
   }
 
-  p {
+  h2 {
     font-size: 1.4rem;
     font-weight: 300;
     text-align: right;
@@ -219,6 +219,7 @@ nav {
   img {
     max-width: 256px;
     width: 100%;
+    object-fit: cover;
   }
 }
 

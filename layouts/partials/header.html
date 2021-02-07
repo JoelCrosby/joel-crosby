@@ -2,25 +2,30 @@
     <div class="nav-container">
         <div class="logo">
             <a href="/">
-                <img src="/android-chrome-192x192.png" alt="jocelcrosby.dev logo" width="32">
-                <li>joelcrosby.dev</li>
+                <img src="/android-chrome-192x192.png" alt="jocelcrosby.dev logo" width="32" height="32">
+                <span>joelcrosby.dev</span>
             </a>
         </div>
 
         <ul>
             {{ range .Site.Menus.main }}
+            <li>
                 <a href="{{ .URL }}">
-                    <li>{{ .Name }}</li>
+                    {{ .Name }}
                 </a>
+            </li>
             {{ end }}
 
-            <a href="https://github.com/joelcrosby" target=" _blank" rel="noreferrer noopener">
-                <li>Github</li>
-            </a>
-
-            <a href="https://netptune.co.uk" target="_blank" rel="noreferrer noopener">
-                <li>Netptune</li>
-            </a>
+            <li>
+                <a href="https://github.com/joelcrosby" target=" _blank" rel="noreferrer noopener">
+                    Github
+                </a>
+            </li>
+            <li>
+                <a href="https://netptune.co.uk" target="_blank" rel="noreferrer noopener">
+                    Netptune
+                </a>
+            </li>
         </ul>
 
         <div class="theme-switch-wrapper">

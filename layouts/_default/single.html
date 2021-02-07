@@ -2,7 +2,7 @@
 {{ partial "metadata.html" . }}
 <article class="article-post">
 
-    <img src="{{ .Params.Image }}" width="400" />
+    <img src="{{ .Params.Image.Src }}" width="400" />
 
     <small>
         Posted on {{ .Date.Format "Jan 2 2006"}}.

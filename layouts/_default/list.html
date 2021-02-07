@@ -3,14 +3,14 @@
 <main>
     <div class="hero">
         <h1>{{ .Title }}</h1>
-        <p>{{ .Site.Params.Subtitle }}</p>
+        <h2>{{ .Site.Params.Subtitle }}</h2>
     </div>
 
     {{range .Site.RegularPages.ByPublishDate.Reverse}}
         <div class="a-item">
             <div>
                 <a href="{{ .RelPermalink }}">
-                    <img src="{{ .Params.image }}" alt="{{ .Params.alt}}" width="512">
+                    <img width="256" height="192" src="{{ .Params.Image.Src }}" alt="{{ .Params.Image.Alt }}" width="512">
                 </a>
             </div>
             <div>
