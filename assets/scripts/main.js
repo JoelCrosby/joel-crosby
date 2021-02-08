@@ -40,6 +40,20 @@ const init = () => {
   };
 
   toggleSwitch.addEventListener('change', switchTheme, false);
+
+  let menuOpen = false;
+
+  const navMenuBtn = document.querySelector('.nav-menu');
+  const navContainer = document.querySelector('.nav-container');
+  const navEl = document.querySelector('nav');
+
+  navMenuBtn.addEventListener('click', () => {
+    navContainer.style.height = menuOpen ? '40px' : '248px';
+    navEl.classList.toggle('nav-shadow')
+
+    menuOpen = !menuOpen;
+  });
+
 };
 
 init();
