@@ -1,6 +1,6 @@
 FROM nginx:alpine AS base
 WORKDIR /
-EXPOSE 8080
+EXPOSE 80
 
 FROM alpine:latest AS build
 WORKDIR /
@@ -20,4 +20,4 @@ COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /src/public /usr/share/nginx/html
 
 # set read permissions to html nginx dir
-RUN chmod -R 777 /usr/share/nginx/html
+RUN chmod -R 755 /usr/share/nginx/html
