@@ -6,7 +6,7 @@ const getPreferScheme = (scheme) => {
   return window.matchMedia(`(prefers-color-scheme: ${scheme})`)?.matches;
 };
 
-const init = () => {
+const setupThemeToggle = () => {
   const localTheme = localStorage.getItem('theme');
   const userPrefersDark = getPreferScheme('dark');
 
@@ -40,20 +40,24 @@ const init = () => {
   };
 
   toggleSwitch.addEventListener('change', switchTheme, false);
+};
 
+const setupNav = () => {
   let menuOpen = false;
 
-  const navMenuBtn = document.querySelector('.nav-menu');
-  const navContainer = document.querySelector('.nav-container');
   const navEl = document.querySelector('nav');
+  const navContainer = document.querySelector('.nav-container');
+  const navMenuBtn = navContainer.querySelector('.nav-menu');
+  const navMenu = navContainer.querySelector('ul');
 
   navMenuBtn.addEventListener('click', () => {
     navContainer.style.height = menuOpen ? '40px' : '248px';
-    navEl.classList.toggle('nav-shadow')
+    navEl.classList.toggle('nav-shadow');
+    navMenu.classList.toggle('nav-open')
 
     menuOpen = !menuOpen;
   });
+}
 
-};
-
-init();
+setupThemeToggle();
+setupNav();
