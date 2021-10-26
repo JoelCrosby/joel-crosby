@@ -8,6 +8,7 @@ COPY . /src
 
 # install dependancies
 RUN apk add --no-cache \
+        git \
         hugo
 
 # build hugo static site
