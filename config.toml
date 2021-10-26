@@ -1,6 +1,7 @@
 baseURL = "https://joelcrosby.dev"
 languageCode = "en-us"
 title = "joelcrosby.dev"
+enableGitInfo = "true"
 
 [params]
   Subtitle = "A Dev's note about things"

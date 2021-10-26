@@ -125,6 +125,16 @@ article {
   img {
     max-width: 100%;
   }
+
+  .build-info {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .25px;
+
+    a {
+      text-decoration: none;
+    }
+  }
 }
 
 nav {
