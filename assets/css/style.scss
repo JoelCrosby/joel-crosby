@@ -11,6 +11,7 @@
   --var-text-color: #32343d;
   --var-border-color: #e9e9e9;
   --var-background-color: #fff;
+  --var-secondary-background-color: #f4f4f4;
   --var-heading-color: #818cab;
   --var-text-primary-color: #59188b;
 
@@ -26,6 +27,7 @@
   --var-text-color: #e1e1ff;
   --var-border-color: #2e2e47;
   --var-background-color: #0e0e15;
+  --var-secondary-background-color: #15151b;
   --var-heading-color: #818cab;
   --var-text-primary-color: #c888f8;
 
@@ -87,6 +89,10 @@ h2 {
   font-size: 1.414rem;
 }
 
+main {
+  min-height: calc(100vh - 74px);
+}
+
 main,
 article {
   padding: 1rem 2rem;
@@ -103,6 +109,36 @@ article {
 
   & > img {
     width: 100%;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 12rem;
+  background-color: var(--var-secondary-background-color);;
+  margin-top: 4rem;
+
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+    padding: 0 1.2rem;
+    font-weight: 300;
+    font-size: 1rem;
+    font-family: var(--var-title-font-family);
+  }
+
+  a {
+    text-decoration: none;
+    letter-spacing: 1px;
   }
 }
 

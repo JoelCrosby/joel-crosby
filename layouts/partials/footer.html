@@ -1,0 +1,21 @@
+<footer>
+  <ul>
+    {{ range .Site.Menus.main }}
+    <li>
+        <a href="{{ .URL }}">
+            {{ .Name }}
+        </a>
+    </li>
+    {{ end }}
+
+    <li>
+        <a href="https://github.com/joelcrosby" target=" _blank" rel="noreferrer noopener">
+            Github
+        </a>
+    </li>
+    <li>
+        <a href="https://netptune.co.uk" target="_blank" rel="noreferrer noopener">
+            Netptune
+        </a>
+    </li>
+</ul></footer>
