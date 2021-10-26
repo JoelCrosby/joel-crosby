@@ -14,9 +14,9 @@ credit: Emily Campbell
 
 As is tradition when switching to Linux, I decided to start with Ubuntu. More specifically 20.04, the latest release at the time. The installation is very simple, the simple next, next, next affair. A few clicks later and you're ready to reboot.
 
-The initial experience is pleasant. while booting up the Ubuntu logo is nicely displayed below the motherboard vender logo. This may seem pretty minor but these little touches really add up.
+The initial experience is pleasant. while booting up the Ubuntu logo is nicely displayed below the motherboard vendor logo. This may seem pretty minor but these little touches really add up.
 
-After logging in I was greeted with what I'd eventually learn is Ubuntu's spin on the gnome desktop environment. And it's nice, like really nice. The Yaru theme that the Ubuntu team has put together is one of the cleanest looking gtk themes that I've seen. along with the new icons the whole thing just looks great. As apposed to Linux desktop environment's of the past. Its clear some serious design work has gone into both gnome and Ubuntu's accompanying theme which is refreshing.
+After logging in I was greeted with what I'd eventually learn is Ubuntu's spin on the gnome desktop environment. And it's nice, like really nice. The Yaru theme that the Ubuntu team has put together is one of the cleanest looking gtk themes that I've seen. along with the new icons the whole thing just looks great. As opposed to Linux desktop environment's of the past. Its clear some serious design work has gone into both gnome and Ubuntu's accompanying theme which is refreshing.
 
 ## Ubuntu-20.04 Desktop
 
