@@ -212,6 +212,15 @@ nav {
   }
 }
 
+.vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 74px);
+  padding: 0;
+}
+
 #logo {
   margin: 2rem;
 }
