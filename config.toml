@@ -12,3 +12,9 @@ enableGitInfo = "true"
     name = "Home"
     url = "/"
     weight = -110
+  [[menu.main]]
+    identifier = "netputune"
+    name = "Netputune"
+    url = "/projects/netptune"
+    weight = -110
+
