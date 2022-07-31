@@ -29,7 +29,7 @@
     {{ $style := resources.Get "css/style.scss" | resources.ToCSS $options  | resources.Fingerprint  }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
-    {{ $scripts := resources.Get "scripts/main.js" | resources.Minify | resources.Fingerprint }}
-    <script src="{{ $scripts.RelPermalink }}" defer></script>
+    {{ $js := resources.Get "scripts/main.ts" | js.Build | resources.Minify  | resources.Fingerprint }}
+    <script src="{{ $js.RelPermalink }}" defer></script>
 
 </head>

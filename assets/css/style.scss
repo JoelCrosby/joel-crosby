@@ -101,6 +101,13 @@ article {
   margin: 0 auto;
 }
 
+@media only screen and (min-width: 1024px) {
+  main,
+  article {
+    max-width: 48rem;
+  }
+}
+
 article {
   & > small {
     display: inline-block;
@@ -240,10 +247,10 @@ nav {
 
 .hero {
   text-align: center;
-  border-bottom: 1px solid var(--var-border-color);
   padding: 0.1rem 1rem;
 
   h1 {
+    font-size: 4.6rem;
     font-weight: normal;
     margin: 1rem 0 0 0;
     text-align: left;
@@ -272,13 +279,15 @@ nav {
 }
 
 .a-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: start;
   align-items: center;
   margin: 3.6rem 0;
+  column-gap: 2rem;
 
-  & > div:first-child {
-    margin-right: 2rem;
+  .a-item-img {
+    justify-self: center;
   }
 
   img {
@@ -302,7 +311,7 @@ nav {
     border-radius: 3px;
     font-size: 14px;
   }
-  
+
   a {
     color: var(--var-text-primary-color);
     text-decoration: none;

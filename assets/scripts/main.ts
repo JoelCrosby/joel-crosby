@@ -1,4 +1,6 @@
-const getPreferScheme = (scheme) => {
+type ThemeScheme = 'dark' | 'light';
+
+const getPreferScheme = (scheme: ThemeScheme): boolean => {
   if (!window.matchMedia) {
     return null;
   }
@@ -11,7 +13,7 @@ const setupThemeToggle = () => {
   const userPrefersDark = getPreferScheme('dark');
 
   const currentTheme = localStorage.getItem('theme');
-  const toggleSwitch = document.querySelector(
+  const toggleSwitch: HTMLInputElement = document.querySelector(
     '.theme-switch input[type="checkbox"]'
   );
 
@@ -27,8 +29,8 @@ const setupThemeToggle = () => {
     document.documentElement.setAttribute('data-theme', currentTheme);
   }
 
-  const switchTheme = (e) => {
-    const toggle = e.target;
+  const switchTheme = (e: Event) => {
+    const toggle = e.target as HTMLInputElement;
 
     if (toggle.checked) {
       document.documentElement.setAttribute('data-theme', 'dark');
@@ -45,19 +47,19 @@ const setupThemeToggle = () => {
 const setupNav = () => {
   let menuOpen = false;
 
-  const navEl = document.querySelector('nav');
-  const navContainer = document.querySelector('.nav-container');
-  const navMenuBtn = navContainer.querySelector('.nav-menu');
-  const navMenu = navContainer.querySelector('ul');
+  const navEl = document.querySelector<HTMLDivElement>('nav');
+  const navContainer = document.querySelector<HTMLDivElement>('.nav-container');
+  const navMenuBtn = navContainer.querySelector<HTMLDivElement>('.nav-menu');
+  const navMenu = navContainer.querySelector<HTMLDivElement>('ul');
 
   navMenuBtn.addEventListener('click', () => {
     navContainer.style.height = menuOpen ? '40px' : '248px';
     navEl.classList.toggle('nav-shadow');
-    navMenu.classList.toggle('nav-open')
+    navMenu.classList.toggle('nav-open');
 
     menuOpen = !menuOpen;
   });
-}
+};
 
 setupThemeToggle();
 setupNav();

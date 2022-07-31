@@ -8,7 +8,7 @@
 
     {{range .Site.RegularPages.ByPublishDate.Reverse}}
         <div class="a-item">
-            <div>
+            <div class="a-item-img">
                 <a href="{{ .RelPermalink }}">
                     <img width="256" height="192" src="{{ .Params.Image.Src }}" alt="{{ .Params.Image.Alt }}" width="512">
                 </a>
